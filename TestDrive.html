@@ -97,23 +97,37 @@
             </div>
         </div>
 
-    <div class="form-input__wrapper"><div class="form-input-label">
-        <div class=" col-lg-4 col-md-6">
-        <input class="form-input-label__input form-input-text__input" name="firstName" placeholder=" " type="text" aria-labelledby="form-input__label-firstName" aria-required="true" value="" aria-describedby="form-input__desc-firstName"
-        <label class="form-input-label__label" for="firstName" id="form-input__label-firstName">Nome</label>
-            <div class=" col-lg-4 col-md-6">
-        <input class="form-input-label__input form-input-text__input" name="secondName" placeholder=" " type="text" aria-labelledby="form-input__label-secondName" aria-required="true" value="" aria-describedby="form-input__desc-secondName">
-        <label class="form-input-label__label" for="secondName" id="form-input__label-secondName">Sobrenome</label>
-                <div class=" col-lg-4 col-md-6">
-        <input class="form-input-label__input form-input-text__input" name="firstName" placeholder=" " type="text" aria-labelledby="form-input__label-firstName" aria-required="true" value="" aria-describedby="form-input__desc-firstName">
-        <label class="form-input-label__label" for="firstName" id="form-input__label-firstName">Sobrenome</label>
 
-
-
-
+    <main id="main">
+    <div class="col-md-6">
+        <h3>Contactos</h3>
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Nome" required data-error="Insere o seu nome">
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="text" placeholder="Email" id="email" class="form-control" name="email" required data-error="Insere o seu email">
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <input type="text" placeholder="Número" id="phone" class="form-control" name="phone" required data-error="Insere o seu nº de telemóvel">
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
     </div>
-        <div class="form-input__error" id="form-input__desc-firstName"><span class="screen-reader-text">Nome</span>
-            <svg class="form-input__error-icon" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M7.417 9.167v-5.25h1.166v5.25H7.417zM7.417 10.333V11.5h1.166v-1.167H7.417z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8zm7-5.833a5.833 5.833 0 1 0 0 11.666A5.833 5.833 0 0 0 8 2.167z"></path></svg><span>Este campo é obrigatório.</span></div></div>
+    <div class="col-md-12">
+        <div class="submit-button text-center">
+            <button class="btn btn-common" id="submit" type="submit">Finalizar Reserva</button>
+            <div id="msgSubmit" class="h3 text-center hidden"></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+ </main>
 
 
 <div class="call-to-action">
