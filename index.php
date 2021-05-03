@@ -38,9 +38,9 @@ top();
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="product-item">
-                    <a href="cbr1000rr-rdetalhes.html"><img src="assets/images/honda.jpg" alt=""></a>
+                    <a href="cbr1000rr.php"><img src="assets/images/honda.jpg" alt=""></a>
                     <div class="down-content">
-                        <a href="cbr1000rr-rdetalhes.html"><h4>honda cbr1000rr-r</h4></a>
+                        <a href="cbr1000rr.php"><h4>honda cbr1000rr-r</h4></a>
 
                         <h6>26.200€</h6>
 
@@ -49,9 +49,9 @@ top();
                         <small>&nbsp;&nbsp;&nbsp;&nbsp;
                             <strong title="Author"><i class="fa fa-cube"></i> 217 cv</strong>&nbsp;&nbsp;&nbsp;&nbsp;
                             <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                            <div class="alert alert-success" role="alert">
-                                <a href="testdrive.html"> testdrive</a>
 
+                            <div class="alert alert-primary" role="alert" style="text-align: center">
+                                <a href="testDrive.php"> testdrive</a>
                         </small>
                     </div>
                 </div>
