@@ -89,7 +89,7 @@ function top(){
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Acessórios</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="capacete.html">Capacete</a>
+                            <a class="dropdown-item" href="capacete.php">Capacete</a>
                             <a class="dropdown-item" href="casaco.html">casaco</a>
                             <a class="dropdown-item" href="luvas.html">luvas</a>
                             <a class="dropdown-item" href="calças.html">calças</a>
@@ -106,7 +106,11 @@ function top(){
 }
 function bottom(){
 ?>
-
+    <script>
+        $('document').ready(function(){
+            fillTableMarcas($('#id').val());
+        })
+    </script>
     <footer>
         <div class="container">
             <div class="row">
@@ -127,6 +131,7 @@ function bottom(){
 
     <!-- Additional Scripts -->
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/common.js"></script>
     <script src="assets/js/owl.js"></script>
 <?php
 }
