@@ -58,36 +58,24 @@ function top(){
 
                         <div class="container">
                             <div class="row">
-                                <div class="col-12">
-                                    <i class="fas fa-search" style="color: firebrick"></i>
-                                    <input style="width: 95%;" type="text" id="search" class="border float-left">
-
-
-
-                                </div>
-
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Estrada</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="adicionaMarca.php">Adiciona marca</a>
+                            <a class="dropdown-item" href="casaco.html">Adiciona mota</a>
+                            <a class="dropdown-item" href="luvas.html">Adiciona tipo</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tipos</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="SuperDesportivas.php">Super Desportivas</a>
                             <a class="dropdown-item" href="hyperNaked.php">Hyper Naked</a>
                             <a class="dropdown-item" href="sportHeritage.php">Sport Heritage</a>
                             <a class="dropdown-item" href="125cc.php">125cc</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Trail</a>
-                        <div class="dropdown-menu">
                             <a class="dropdown-item" href="DesportivoDeAventura.html">Desportivo de aventura</a>
                             <a class="dropdown-item" href="DesportoouAventura.html">Desporto e aventura</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Todo o Terreno</a>
-                        <div class="dropdown-menu">
                             <a class="dropdown-item" href="Moto4.html">Moto 4</a>
                             <a class="dropdown-item" href="MotosDeCompetiçao.html">Motas de competição</a>
                         </div>
@@ -103,6 +91,7 @@ function top(){
                             <a class="dropdown-item" href="Botas.html">botas</a>
                         </div>
                     </li>
+
                 </ul>
             </div>
         </div>

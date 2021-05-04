@@ -57,13 +57,7 @@ function top(){
 
                         <div class="container">
                             <div class="row">
-                                <div class="col-12">
-                                    <i class="fas fa-search" style="color: firebrick"></i>
-                                    <input style="width: 95%;" type="text" id="search" class="border float-left">
 
-
-
-                                </div>
 
 
                     <li class="nav-item dropdown">

@@ -33,6 +33,10 @@ $result=mysqli_query($con,$sql);
                     <h2>Motas em destaque</h2>
                 </div>
             </div>
+            <div class="col-12">
+                <i class="fas fa-search" style="color: firebrick"></i>
+                <input  type="text" id="search" class="border float-left">
+            </div>
             <table class="table table-hover table-striped">
                 <tr style="text-align: center">
                     <th>Nome</th>

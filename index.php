@@ -36,6 +36,10 @@ top();
                     <h2>Motas em destaque</h2>
                 </div>
             </div>
+            <div class="col-12">
+                <i class="fas fa-search" style="color: firebrick"></i>
+                <input style="width: 95%;" type="text" id="search" class="border float-left">
+            </div>
             <div class="col-lg-4 col-md-6">
                 <div class="product-item">
                     <a href="cbr1000rr.php"><img src="assets/images/honda.jpg" alt=""></a>
