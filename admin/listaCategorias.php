@@ -32,6 +32,10 @@ $result=mysqli_query($con,$sql);
 
 <div class="container">
     <table class='table table-striped' width="100%">
+        <div>
+            <a href="index.php"> <button type="button" class="btn btn-danger">Voltar</button></a>
+        </div>
+        <br>
         <tr>
             <td colspan="5" align='right'>
                 <a href="adicionaCategoria.php"><i class='fas fa-plus text-success'> Adiciona</i></a>

@@ -12,38 +12,23 @@ top();
                 </div>
                 <form action="confirmaNovaMota.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="modeloTelemovel">Nome: </label>
+                        <label for="motaNome">Nome: </label>
                         <input type="text" class="form-control" id="MotaNome" name="NomeMota">
                     </div><br>
                     <div class="form-group">
-                        <label for="preco">Preço: </label>
+                        <label for="motaPreco">Preco: </label>
                         <input type="number" class="form-control" id="motaPreco" name="preco"><br>
                     </div><br>
                     <div class="form-group">
-                        <label for="imagemTelemovel">Imagem: </label>
+                        <label for="motaImagemUrl">Imagem: </label>
                         <input type="file" class="form-control" id="motaImagemUrl" name="imagemMota">
                     </div><br>
+                    <div class="form-group">
+                        <label for="motaCilindrada">Imagem: </label>
+                        <input type="file" class="form-control" id="motaICilindrada" name="motaCilindrada">
+                    </div><br>
 
-                    <div class="form-group">
-                        <label for="produtoCategoria"> Categoria:</label>
-                        <select name="produtoCategoria" class="form-control">
-                            <option value="-1">Escolha a categoria...</option>
-                            <?php
-                            $sql="select * from categorias order by categoriaNome";
-                            $result=mysqli_query($con,$sql);
-                            while ($dados=mysqli_fetch_array($result)){
-                                ?>
-                                <option value="<?php echo $dados['categoriaId']?>"><?php echo $dados['categoriaNome']?></option>
-                                <?php
-                            }
-                            ?>
-                        </select>
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="telemovelMarca"> Marca:</label>
-                        <select name="telemovelMarca" class="form-control">
-                            <option value="-1">Escolha a marca...</option>
+                   <option value="-1">Escolha a marca...</option>
                             <?php
                             $sql="select * from marcas order by marcaNome";
                             $result=mysqli_query($con,$sql);

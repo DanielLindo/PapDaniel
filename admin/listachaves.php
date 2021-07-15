@@ -1,20 +1,20 @@
 <?php
 include_once("includes/body.inc.php");
 top();
-$sql = "select * from  marcas";
+$sql = "select * from  chaves";
 $result=mysqli_query($con,$sql);
 ?>
 <script>
-    function confirmaEliminaMarca(id) {
+    function confirmaEliminaChaves(id) {
         $.ajax({
-            url:"AJAX/AJAXGetNameMarca.php",
+            url:"AJAX/AJAXGetNamechaves.php",
             type:"post",
             data:{
                 idMarca:id
             },
             success:function (result){
-                if(confirm('Confirma que deseja eliminar a marca:'+result+"?"))
-                                    window.location="eliminaMarca.php?id=" + id;
+                if(confirm('Confirma que deseja eliminar a chave:'+result+"?"))
+                                    window.location="eliminaChaves.php?id=" + id;
             }
         })
     }
@@ -26,12 +26,13 @@ $result=mysqli_query($con,$sql);
 <br>
     <div class="col-md-12" >
         <div class="section-heading" style="text-align: center">
-            <h2>Marcas</h2>
+            <h2>Chaves</h2>
         </div>
     </div>
 
 <div class="container">
-
+    <div class="col-12">
+    </div>
     <br>
     <table class='table table-striped' width="100%">
         <div>
@@ -39,7 +40,7 @@ $result=mysqli_query($con,$sql);
         </div>
         <tr>
             <td colspan="5" align='right'>
-                <a href="adicionaMarca.php"><i class='fas fa-plus text-success'> Adiciona</i></a>
+                <a href="adicionaChaves.php"><i class='fas fa-plus text-success'> Adiciona</i></a>
             </td>
         </tr>
         <tr style="text-align: center">
@@ -52,10 +53,10 @@ $result=mysqli_query($con,$sql);
         while($dados=mysqli_fetch_array($result)){
             ?>
             <tr style="text-align: center">
-                <td><?php echo $dados['marcaId']?></td>
-                <td><?php echo $dados['marcaNome']?></td>
-                <td><a href="editaMarca.php?id=<?php echo $dados['marcaId']?>"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-pencil" style="color: white"></i>&nbsp;Edita</button></a></td>
-                <td><a href="#" onclick="confirmaEliminaMarca(<?php echo $dados['marcaId']?>);"><button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash" style="color: white"></i>&nbsp;Elimina</button></a></td>
+                <td><?php echo $dados['chaveId']?></td>
+                <td><?php echo $dados['chaveNome']?></td>
+                <td><a href="editaChaves.php?id=<?php echo $dados['chaveId']?>"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-pencil" style="color: white"></i>&nbsp;Edita</button></a></td>
+                <td><a href="#" onclick="confirmaEliminaChaves(<?php echo $dados['chaveId']?>);"><button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash" style="color: white"></i>&nbsp;Elimina</button></a></td>
             </tr>
             <?php
         }

@@ -7,13 +7,13 @@ top();
         <div class="row">
             <div class="col-md-12">
                 <div class="section-heading ">
-                    <h2 class="text-dark">Nova<em> Marca</em></h2>
+                    <h2 class="text-dark">Nova<em> Chave</em></h2>
 
                 </div>
-                <form action="confirmaNovaMarca.php" method="post" enctype="multipart/form-data">
+                <form action="confirmaNovaChaves.php" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="nome">Nome: </label>
-                        <input type="text" class="form-control" id="nome" name="nomeMarca">
+                        <input type="text" class="form-control" id="nome" name="nomeChaves">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Adicionar</button>
@@ -27,4 +27,6 @@ top();
 <?php
 bottom();
 ?>
+
+
 

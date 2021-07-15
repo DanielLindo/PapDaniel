@@ -81,7 +81,7 @@ $result=mysqli_query($con,$sql);
 
                 </div>
                 <div class="col-4">
-               <a href="listaMotos.php">
+               <a href="listaMotas.php">
                        <div class="service-item ">
                         <div class="icon ">
                             <i class="fa fa-cog"></i>

@@ -58,48 +58,7 @@ function top(){
 
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
 
-                        <div class="container">
-                            <div class="row">
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="marca.php">Adiciona marca</a>
-                            <a class="dropdown-item" href="mota.php">Adiciona mota</a>
-                            <a class="dropdown-item" href="luvas.html">Adiciona tipo</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tipos</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="SuperDesportivas.php">Super Desportivas</a>
-                            <a class="dropdown-item" href="hyperNaked.php">Hyper Naked</a>
-                            <a class="dropdown-item" href="sportHeritage.php">Sport Heritage</a>
-                            <a class="dropdown-item" href="125cc.php">125cc</a>
-                            <a class="dropdown-item" href="DesportivoDeAventura.html">Desportivo de aventura</a>
-                            <a class="dropdown-item" href="DesportoouAventura.html">Desporto e aventura</a>
-                            <a class="dropdown-item" href="Moto4.html">Moto 4</a>
-                            <a class="dropdown-item" href="MotosDeCompetiçao.html">Motas de competição</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Acessórios</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="capacete.php">Capacete</a>
-                            <a class="dropdown-item" href="casaco.html">casaco</a>
-                            <a class="dropdown-item" href="luvas.html">luvas</a>
-                            <a class="dropdown-item" href="calças.html">calças</a>
-                            <a class="dropdown-item" href="Botas.html">botas</a>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
         </div>
     </nav>
 </header>

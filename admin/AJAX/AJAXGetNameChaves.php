@@ -1,10 +1,10 @@
 <?php
 // dados na base de dados
 include_once("../includes/body.inc.php");
-$id=intval($_POST['idClassificao']);
-$sql="Select * from classificacoes where classificacaoId=$id";
+$id=intval($_POST['idChave']);
+$sql="Select * from chaves where chaveId=$id";
 
 $result=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($result);
-echo $dados['classificacaoNome'];
+echo $dados['chaveNome'];
 ?>
