@@ -32,10 +32,12 @@ $result=mysqli_query($con,$sql);
                 <div class="section-heading">
                     <h2>Motas em destaque</h2>
                 </div>
+
             </div>
             <div class="col-12">
                 <i class="fas fa-search" style="color: firebrick"></i>
                 <input  type="text" id="search" class="border float-left">
+                <a  href="adicionaMota.php" ><span class="btn-sm btn-primary">adiciona</span></a>
             </div>
             <table class="table table-hover table-striped">
                 <tr style="text-align: center">
@@ -51,7 +53,7 @@ $result=mysqli_query($con,$sql);
                     <tr style="text-align: center">
                         <td><?php echo $dados['motaNome']?></td>
                         <td><?php echo $dados['marcaNome']?></td>
-                        <td><img src="assets/images/honda.jpg" alt=""  width="102"></td>
+                       <!-- <td><img width="120" src="../<?php echo $dados['m']?>"></td>-->
                         <td><a href="../cbr1000rr.php"> <span class="btn-sm btn-success">Ir para a página</span></a></td>
                         <td><i class="fas fa-edit" style="color: #009900"></i></td>
                         <td><i class="fas fa-trash-alt" style="color: #e60000"></i></td>

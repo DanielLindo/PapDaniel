@@ -64,7 +64,7 @@ top();
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="product-item">
-                        <a href="Aprilla.html"><img src="assets/images/Aprilla.png" class="img-fluid" style="border-bottom:2px" alt=""></a>
+                        <a href="Aprilla.php"><img src="assets/images/Aprilla.png" class="img-fluid" style="border-bottom:2px" alt=""></a>
                         <div class="down-content">
                             <a href="cbr1000rr.php"><h4>Aprilla</h4></a>
 

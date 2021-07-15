@@ -1,3 +1,4 @@
+
 <?php
 include_once("includes/body.inc.php");
 top();
@@ -103,6 +104,8 @@ top();
     </div>
 </div>
 
+
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -169,6 +172,19 @@ top();
     </div>
 </div>
 
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Additional Scripts -->
+<script src="assets/js/custom.js"></script>
+<script src="assets/js/owl.js"></script>
 <?php
 bottom();
 ?>
+</body>
+
+
+</html>

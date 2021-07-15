@@ -69,7 +69,7 @@ function top(){
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="marca.php">Adiciona marca</a>
-                            <a class="dropdown-item" href="casaco.html">Adiciona mota</a>
+                            <a class="dropdown-item" href="mota.php">Adiciona mota</a>
                             <a class="dropdown-item" href="luvas.html">Adiciona tipo</a>
                         </div>
                     </li>

@@ -1,6 +1,8 @@
 <?php
 include_once("includes/body.inc.php");
 top();
+$sql="select * from motas";
+$result = mysqli_query($con,$sql);
 ?>
 <!-- Page Content -->
 <!-- Banner Starts Here -->
@@ -27,8 +29,56 @@ top();
     </div>
 </div>
 <!-- Banner Ends Here -->
-
 <div class="latest-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading" style="text-align: center">
+                    <h2>Motas em destaque</h2>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <i class="fas fa-search" style="color: firebrick"></i>
+                <input style="width: 95%;" type="text" id="search" class="border float-left">
+
+            </div>
+
+            <div class ="row">
+                <div class="col-lg-4 col-md-6">
+                     <?php
+                        while ($dados=mysqli_fetch_array($result)) {
+                        ?>
+                    <div class="product-item">
+                        <a href="mota.php?id=<?php echo $dados["motaId"]?>">  <td><img width="120" src="../<?php echo $dados['motaImagemURL']?>"></td></a>
+                        <div class="down-content">
+
+                            <a href="mota.php?id=<?php echo $dados["motaId"]?>"><h4><?php echo $dados['motaNome']?></h4></a>
+
+                            <h6><?php echo $dados['motaPreco']?> €</h6>
+
+                            <p> <?php echo $dados['motaCombustivel']?> &nbsp;/&nbsp; <?php echo $dados['motaAno']?></p>
+
+                            <small>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Author"><i class="fa fa-cube"></i><?php echo $dados['motaCilindrada']?></strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
+
+                                <div class="alert alert-primary" role="alert" style="text-align: center">
+                                    <a href="testDrive.php"> testdrive</a>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <?php
+                }
+                ?>
+
+        </div>
+    </div>
+</div>
+<!--<div class="latest-products">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -155,7 +205,7 @@ top();
     </div>
 </div>
 </div>
-
+-->
 
 <div class="services" style="background-image: url(assets/images/6motosBackGround.png);" >
     <div class="container">
@@ -194,7 +244,7 @@ top();
     </div>
 </div>
 
-<div class="happy-clients">
+<!--<div class="happy-clients">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -262,7 +312,7 @@ top();
         </div>
     </div>
 </div>
-
+-->
 <div class="call-to-action">
     <div class="container">
         <div class="row">

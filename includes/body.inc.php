@@ -1,5 +1,7 @@
 <?php
 include_once ("config.inc.php");
+$con=mysqli_connect(HOST,USER,PWD,DATABASE);
+$con->set_charset("utf8");
 function top(){
 ?>
 <!DOCTYPE html>
@@ -89,6 +91,7 @@ function top(){
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Acessórios</a>
                         <div class="dropdown-menu">
+
                             <a class="dropdown-item" href="capacete.php">Capacete</a>
                             <a class="dropdown-item" href="casaco.html">casaco</a>
                             <a class="dropdown-item" href="luvas.html">luvas</a>
