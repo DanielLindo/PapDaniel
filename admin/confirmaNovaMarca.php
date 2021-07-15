@@ -5,6 +5,6 @@ $nome=$_POST['nomeMarca'];
 
 $sql="insert into marcas(marcaNome) values('".$nome."');";
 mysqli_query($con,$sql);
-header("location:marca.php");
+header("location:listaMarcas.php");
 ?>
 
