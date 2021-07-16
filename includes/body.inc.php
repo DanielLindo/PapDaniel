@@ -3,6 +3,7 @@ include_once ("config.inc.php");
 $con=mysqli_connect(HOST,USER,PWD,DATABASE);
 $con->set_charset("utf8");
 function top(){
+    global $con;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,19 +60,32 @@ function top(){
 
                         <div class="container">
                             <div class="row">
+                            <?php
+                            $sql="select * from tipos";
+                            $res=mysqli_query($con,$sql);
+                            while ($dados=mysqli_fetch_array($res)){
+                            ?>
 
 
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $dados['tipoNome']?></a>
+                                    <div class="dropdown-menu">
+                                        <?php
+                                        $sql="select * from classificacoes where classificacaoTipoId=".$dados['tipoId'];
+                                        $resC=mysqli_query($con,$sql);
+                                        while ($dadosC=mysqli_fetch_array($resC)){
+                                        ?>
+                                        <a class="dropdown-item" href="listaMotas.php?catId=<?php echo $dadosC['classificacaoId']?>"><?php echo $dadosC['classificacaoNome']?></a>
+                                        <?php
+                                        }
+                                        ?>
+                                    </div>
+                                </li>
+                    <?php
+                    }
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Estrada</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="SuperDesportivas.php">Super Desportivas</a>
-                            <a class="dropdown-item" href="hyperNaked.php">Hyper Naked</a>
-                            <a class="dropdown-item" href="sportHeritage.php">Sport Heritage</a>
-                            <a class="dropdown-item" href="125cc.php">125cc</a>
-                        </div>
-                    </li>
-
+                    ?>
+<!--
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Trail</a>
                         <div class="dropdown-menu">
@@ -87,16 +101,21 @@ function top(){
                             <a class="dropdown-item" href="MotosDeCompetiçao.html">Motas de competição</a>
                         </div>
                     </li>
-
+-->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Acessórios</a>
                         <div class="dropdown-menu">
+                            <?php
+                            $sql="select * from categorias";
+                            $resC=mysqli_query($con,$sql);
+                            while ($dadosC=mysqli_fetch_array($resC)){
+                                ?>
+                                <a class="dropdown-item" href="acessorio.php?catid=<?php echo $dadosC['categoriaId']?>"><?php echo $dadosC['categoriaNome']?></a>
+                                <?php
+                            }
+                            ?>
 
-                            <a class="dropdown-item" href="capacete.php">Capacete</a>
-                            <a class="dropdown-item" href="casaco.html">casaco</a>
-                            <a class="dropdown-item" href="luvas.html">luvas</a>
-                            <a class="dropdown-item" href="calças.html">calças</a>
-                            <a class="dropdown-item" href="Botas.html">botas</a>
+
                         </div>
                     </li>
                 </ul>
