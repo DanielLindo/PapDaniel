@@ -36,17 +36,22 @@ $result=mysqli_query($con,$sql);
             <a href="index.php"> <button type="button" class="btn btn-danger">Voltar</button></a>
         </div>
         <tr>
-            <td colspan="8" align='right'>
+            <td colspan="12" align='right'>
                 <a href="adicionaMota.php"><i class='fas fa-plus text-success'> Adiciona</i></a>
             </td>
         </tr>
         <tr style="text-align: center">
             <th>Id</th>
             <th>Nome</th>
+            <th>Marca</th>
             <th>Imagem</th>
             <th>Preco</th>
             <th>Cilindrada</th>
             <th>Ano</th>
+            <th>Combustivel</th>
+            <th>Mudanca</th>
+            <th>Caixa</th>
+            <th>Classificação</th>
             <th colspan="2">op&ccedil&otildees</th>
         </tr>
         <?php
@@ -55,10 +60,15 @@ $result=mysqli_query($con,$sql);
             <tr style="text-align: center">
                 <td><?php echo $dados['motaId']?></td>
                 <td><?php echo $dados['motaNome']?></td>
+                <td><?php echo $dados['motaMarcaId']?></td>
                 <td><?php echo $dados['motaImagemURL']?></td>
                 <td><?php echo $dados['motaPreco']?></td>
                 <td><?php echo $dados['motaCilindrada']?></td>
                 <td><?php echo $dados['motaAno']?></td>
+                <td><?php echo $dados['motaCombustivel']?></td>
+                <td><?php echo $dados['motaMudanca']?></td>
+                <td><?php echo $dados['motaCaixa']?></td>
+                <td><?php echo $dados['motaClassificacao']?></td>
                 <td><a href="editaMota.php?id=<?php echo $dados['motaId']?>"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-pencil" style="color: white"></i>&nbsp;Edita</button></a></td>
                 <td><a href="#" onclick="confirmaEliminaMota(<?php echo $dados['motaId']?>);"><button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash" style="color: white"></i>&nbsp;Elimina</button></a></td>
             </tr>

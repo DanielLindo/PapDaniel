@@ -50,7 +50,7 @@ $result = mysqli_query($con,$sql);
                         while ($dados=mysqli_fetch_array($result)) {
                         ?>
                     <div class="product-item">
-                        <a href="mota.php?id=<?php echo $dados["motaId"]?>">  <td><img width="120" src="../<?php echo $dados['motaImagemURL']?>"></td></a>
+                        <a href="mota.php?id=<?php echo $dados["motaId"]?>">  <td><img width="120" src="<?php echo $dados['motaImagemURL']?>"></td></a>
                         <div class="down-content">
 
                             <a href="mota.php?id=<?php echo $dados["motaId"]?>"><h4><?php echo $dados['motaNome']?></h4></a>

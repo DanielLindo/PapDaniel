@@ -24,7 +24,7 @@ top();
         <div class="row">
             <div class="col-md-6">
                 <div>
-                    <img src="assets/images/cbr1000rr-rAmostra.png" alt="" class="img-fluid wc-image">
+                    <img src="images/cbr1000rr-rAmostra.png" alt="" class="img-fluid wc-image">
                 </div>
                 <br>
                 <div class="row">
