@@ -5,8 +5,8 @@ $nome=$_POST['nomeMota'];
 $preco=floatval($_POST['precoMota']);
 $marcaId=floatval($_POST['marcaMota']);
 $cilindrada=floatval($_POST['cilindradaMota']);
-$combustivel=addcslashes($_POST['combustivelMota']);
-$mudanca=addcslashes($_POST['mundacaMota']);
+$combustivel=addslashes($_POST['combustivelMota']);
+$mudanca=$_POST['mundancaMota'];
 $caixa=floatval($_POST['caixaMota']);
 $imagem=$_FILES['imagemMota']['name'];
 $novoNome="../images/".$imagem;
@@ -17,10 +17,10 @@ copy($_FILES['imagemMota']['tmp_name'],$novoNome);
 
 
 $sql="insert into motas (motaNome,motaMarcaId,motaPreco,motaCilindrada,motaImagemURL,motaAno,motaCombustivel,motaCaixa,motaMudanca,motaDestaque)
- values('".$nome."','".$marcaId."','".$preco."','".$cilindrada."','images/".$imagem."','".$ano."','".$combustivel."','".$mudanca."','".$caixa."','".$destaque."');";
-
+ values('".$nome."','".$marcaId."','".$preco."','".$cilindrada."','images/".$imagem."','".$ano."','".$combustivel."','".$mudanca."','".$caixa."','".$destaque."')";
 
 mysqli_query($con,$sql);
+echo ($sql);
 //header("location:listaMotas.php");
 ?>
 

@@ -63,10 +63,13 @@ function top(){
     </nav>
 </header>
 <body>
-<?php
+    <?php
 }
+?>
+    <?php
 function bottom(){
 ?>
+
 
     <footer>
         <div class="container">

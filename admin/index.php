@@ -96,7 +96,7 @@ $result=mysqli_query($con,$sql);
 
                 </div>
                 <div class="col-4">
-               <a href="listaAcessorios.php">
+               <a href="listaProduto.php">
                        <div class="service-item ">
                         <div class="icon ">
                             <i class="fa fa-cog"></i>

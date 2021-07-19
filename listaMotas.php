@@ -1,6 +1,11 @@
 <?php
 include_once("includes/body.inc.php");
 top();
+
+$id=intval($_GET['id']);
+$sql="select * from motas";
+$result = mysqli_query($con,$sql);
+$dados = mysqli_fetch_array($result);
 ?>
 <main id="main">
     <br><br> <br> <br> <br>
@@ -13,11 +18,11 @@ top();
 
                 <div class="col-lg-4 col-md-6">
                     <div class="product-item">
-                        <a href="cbr1000rr.php"><img src="assets/images/honda.jpg" alt=""></a>
+                        <img src="<?php echo $dados['motaImagemURL']?>" alt="">
                         <div class="down-content">
-                            <a href="mota.php?id=99"><h4>EXEMPLO</h4></a>
+                            <a href="mota.php?idMota=<?php echo $dados['motaId']?>"><h4>EXEMPLO</h4></a>
 
-                            <h6>26.200€</h6>
+                            <h6><?php echo $dados['motaPreco']?></h6>
 
                             <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2020&nbsp;/&nbsp;</p>
 
@@ -27,144 +32,7 @@ top();
                             </small>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="product-item">
-                        <a href="h2rdetalhes.html"><img src="assets/images/H2RFoto.png" class="img-fluid" style="border-bottom:2px" alt=""></a>
-                        <div class="down-content">
-                            <a href="cbr1000rr.php"><h4>Kawasaki H2R</h4></a>
 
-                            <h6>26.200€</h6>
-
-                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2020&nbsp;/&nbsp;</p>
-
-                            <small>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Author"><i class="fa fa-cube"></i> 217 cv</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="product-item">
-                        <a href="ducati1098s.html"><img src="assets/images/ducati1098s.png" class="img-fluid" style="border-bottom:2px" alt=""></a>
-                        <div class="down-content">
-                            <a href="cbr1000rr.php"><h4>Kawasaki H2R</h4></a>
-
-                            <h6>26.200€</h6>
-
-                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2020&nbsp;/&nbsp;</p>
-
-                            <small>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Author"><i class="fa fa-cube"></i> 217 cv</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="product-item">
-                        <a href="Aprilla.php"><img src="assets/images/Aprilla.png" class="img-fluid" style="border-bottom:2px" alt=""></a>
-                        <div class="down-content">
-                            <a href="cbr1000rr.php"><h4>Aprilla</h4></a>
-
-                            <h6>26.200€</h6>
-
-                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2020&nbsp;/&nbsp;</p>
-
-                            <small>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Author"><i class="fa fa-cube"></i> 217 cv</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="product-item">
-                        <a href="mvagustaf4.html"><img src="assets/images/mvagustaf4.png" class="img-fluid" style="border-bottom:2px" alt=""></a>
-                        <div class="down-content">
-                            <a href="cbr1000rr.php"><h4>Vagusta</h4></a>
-
-                            <h6>26.200€</h6>
-
-                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2020&nbsp;/&nbsp;</p>
-
-                            <small>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Author"><i class="fa fa-cube"></i> 217 cv</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="product-item">
-                        <a href="Ninjazx.html"><img src="assets/images/Ninjazx.png" class="img-fluid" style="border-bottom:2px" alt=""></a>
-                        <div class="down-content">
-                            <a href="cbr1000rr.php"><h4>Ninja</h4></a>
-
-                            <h6>26.200€</h6>
-
-                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2020&nbsp;/&nbsp;</p>
-
-                            <small>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Author"><i class="fa fa-cube"></i> 217 cv</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="product-item">
-                        <a href="hayabusa.html"><img src="assets/images/hayabusa.png" class="img-fluid" style="border-bottom:2px" alt=""></a>
-                        <div class="down-content">
-                            <a href="cbr1000rr.php"><h4>Ninja</h4></a>
-
-                            <h6>26.200€</h6>
-
-                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2020&nbsp;/&nbsp;</p>
-
-                            <small>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Author"><i class="fa fa-cube"></i> 217 cv</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="product-item">
-                        <a href="bwms1000rr.html"><img src="assets/images/bwms1000rr.png" class="img-fluid" style="border-bottom:2px" alt=""></a>
-                        <div class="down-content">
-                            <a href="cbr1000rr.php"><h4>BWM 1000rr</h4></a>
-
-                            <h6>26.200€</h6>
-
-                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2020&nbsp;/&nbsp;</p>
-
-                            <small>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Author"><i class="fa fa-cube"></i> 217 cv</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="product-item">
-                        <a href="gsxr1000.html"><img src="assets/images/gsxr1000.png" class="img-fluid" style="border-bottom:2px" alt=""></a>
-                        <div class="down-content">
-                            <a href="cbr1000rr.php"><h4>Gsxr1000</h4></a>
-
-                            <h6>26.200€</h6>
-
-                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2020&nbsp;/&nbsp;</p>
-
-                            <small>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Author"><i class="fa fa-cube"></i> 217 cv</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                            </small>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
 </main>
 

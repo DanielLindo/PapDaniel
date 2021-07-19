@@ -1,6 +1,7 @@
 <?php
 include_once ("includes/body.inc.php");
 $id=intval($_GET['id']);
+
 $sql="select * from produtos where produtoId=".$id;
 $res=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($res);
@@ -15,16 +16,58 @@ top();
 
                 </div>
                 <form action="confirmaEditaProduto.php" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="idProduto" value="<?php echo $id; ?>">
-                    <div class="form-group">
-                        <label for="nome">Nome: </label>
-                        <input type="text" class="form-control" id="nome" name="nomeProduto"  value="<?php echo $dados['produtoNome']; ?>">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Altera</button>
-                    </div>
+                    <label>Nome: </label>
 
+                    <input type="text" name="nomeProduto" value="<?php echo $dados['produtoNome']?>"><br>
+
+
+                    <br> <img src="../<?php echo $dados['produtoURL']?>" width="220">
+
+
+                    <label>Imagem: </label>
+                    <input type="file" name="imagemProduto"><br>
+                    <br>
+
+                    <br>
+                    <label>Preço: </label>
+                    <input type="text" name="precoProduto" value="<?php echo $dados['produtoPreco']?>">
+                    <br>
+                    <br>
+                    <label>Categoria</label>
+                    <select name="produtoCategoria">
+                        <option value="-1">Escolha a categoria...</option>
+                        <?php
+                        $sql="select * from categorias order by categoriaNome";
+                        $result=mysqli_query($con,$sql);
+                        while ($dados=mysqli_fetch_array($result)){
+                            ?>
+                            <option
+
+                                    value="<?php echo $dados['categoriaId']?>"><?php echo $dados['categoriaNome']?></option>
+                            <?php
+                        }
+
+
+                        ?>
+                    </select>
+                    <br>
+                    <label>Destaque</label>
+
+                    <p><input type="radio" name="destaqueProduto" value="sim"
+                            <?php if( $dados['produtoDestaque'] == 'sim') echo " checked ";?>
+                        >&nbsp;Sim</p>
+                    <p><input type="radio" name="destaqueProduto" value="nao"
+                            <?php if( $dados['produtoDestaque'] == 'nao') echo " checked ";?>
+                        >&nbsp;Não</p>
+                    <br>
+                    <input type="hidden" name="produtoId" value="<?php echo $id?>">
+                     <button type="submit" class="btn btn-primary">Altera</button><br>
                 </form>
+            </div>
+
+            <?php
+            Bottom();
+            ?>
             </div>
         </div>
     </div>
