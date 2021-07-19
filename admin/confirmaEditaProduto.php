@@ -18,8 +18,7 @@ if($imagem!=''){
 }
 echo $sql.=" where produtoId=".$id;
 mysqli_query($con,$sql);
-
-//header("location:listaProduto.php");
+header("location:listaProduto.php");
 ?>
 
 
