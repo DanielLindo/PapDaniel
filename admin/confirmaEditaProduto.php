@@ -1,6 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 
+$id=intval($_POST['id']);
 $nome=addslashes($_POST['nomeProduto']);
 $imagem=$_FILES['imagemProduto']['name'];
 $novoNome="images/".$imagem;
@@ -15,7 +16,7 @@ if($imagem!=''){
     $sql.=", produtoURL='images/".$imagem."'";
     copy($_FILES['imagemProduto']['tmp_name'],$novoNome);
 }
-$sql.=" where produtoId=".$id;
+echo $sql.=" where produtoId=".$id;
 mysqli_query($con,$sql);
 
 //header("location:listaProduto.php");

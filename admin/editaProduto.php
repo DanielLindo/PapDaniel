@@ -39,11 +39,12 @@ top();
                         <?php
                         $sql="select * from categorias order by categoriaNome";
                         $result=mysqli_query($con,$sql);
-                        while ($dados=mysqli_fetch_array($result)){
+                        while ($dadosCat=mysqli_fetch_array($result)){
                             ?>
-                            <option
+                            <option value="<?php echo $dadosCat['categoriaId']?>"
+                                <?php if( $dados['produtoCategoriaId'] == $dadosCat['categoriaId']) echo " selected ";?>
 
-                                    value="<?php echo $dados['categoriaId']?>"><?php echo $dados['categoriaNome']?></option>
+                            ><?php echo $dadosCat['categoriaNome']?></option>
                             <?php
                         }
 
@@ -60,7 +61,7 @@ top();
                             <?php if( $dados['produtoDestaque'] == 'nao') echo " checked ";?>
                         >&nbsp;Não</p>
                     <br>
-                    <input type="hidden" name="produtoId" value="<?php echo $id?>">
+                    <input type="hidden" name="id" value="<?php echo $id?>">
                      <button type="submit" class="btn btn-primary">Altera</button><br>
                 </form>
             </div>
