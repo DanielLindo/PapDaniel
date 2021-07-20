@@ -83,6 +83,24 @@ top();
                         <button type="submit" class="btn btn-success">Adicionar</button>
                     </div>
 
+                    <select name="classificacaoMarca"class="form-control form-control-lg">
+                        <option value="-1">Escolha a classificação da mota...</option>
+                        <?php
+                        $sql="select * from tipos inner join classificacoes on tipoId=classificacaoTipoId ";
+                        $sql.="order by tipoId ";
+                        $result=mysqli_query($con,$sql);
+                        while ($dados=mysqli_fetch_array($result)){
+                            ?>
+                            <option value="<?php echo $dados['classificacaoId']?>"><?php echo $dados['tipoNome'].'-'.$dados['classificacaoNome']?></option>
+                            <?php
+                        }
+
+                        ?>
+
+                    </select>
+
+
+
                 </form>
             </div>
 

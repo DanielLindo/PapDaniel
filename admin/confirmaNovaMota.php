@@ -4,7 +4,8 @@ include_once ("includes/body.inc.php");
 $nome=$_POST['nomeMota'];
 $preco=floatval($_POST['precoMota']);
 $modelo=addslashes($_POST['modeloMota']);
-$marcaId=floatval($_POST['motaMarca']);
+$marcaId=intval($_POST['motaMarca']);
+$classificacaoId=intval($_POST['classificacaoMarca']);
 $cilindrada=floatval($_POST['cilindradaMota']);
 $combustivel=addslashes($_POST['motaCombustivel']);
 $mudanca=$_POST['caixaTipo'];
@@ -17,12 +18,11 @@ copy($_FILES['imagemMota']['tmp_name'],$novoNome);
 
 
 
-$sql="insert into motas (motaNome,motaMarcaId,motaPreco,motaCilindrada,motaImagemURL,motaAno,motaCombustivel,motaCaixa,motaMudanca,motaDestaque, motaModelo)
- values('".$nome."','".$marcaId."','".$preco."','".$modelo."','".$cilindrada."','images/".$imagem."','".$ano."','".$combustivel."','".$mudanca."','".$caixa."','".$destaque."')";
+$sql="insert into motas (motaNome,motaMarcaId,motaPreco, motaModelo,motaCilindrada,motaImagemURL,motaAno,motaCombustivel,motaCaixa,motaMudanca,motaDestaque, motaClassificacaoId)
+ values('".$nome."','".$marcaId."','".$preco."','".$modelo."','".$cilindrada."','images/".$imagem."','".$ano."','".$combustivel."','".$mudanca."','".$caixa."','".$destaque."',".$classificacaoId.")";
 
 mysqli_query($con,$sql);
-echo ($sql);
-//header("location:listaMotas.php");
+header("location:listaMotas.php");
 ?>
 
 

@@ -1,7 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 top();
-$sql = "select * from  motas";
+$sql = "select * from  motas inner join marcas on marcaId=motaMarcaId inner join classificacoes on classificacaoId=motaClassificacaoId";
 $result=mysqli_query($con,$sql);
 ?>
 <script>
@@ -42,15 +42,12 @@ $result=mysqli_query($con,$sql);
         </tr>
         <tr style="text-align: center">
             <th>Id</th>
-            <th>Nome</th>
             <th>Marca</th>
+            <th>Nome</th>
+            <th>Modelo</th>
             <th>Imagem</th>
-            <th>Preco</th>
-            <th>Cilindrada</th>
-            <th>Ano</th>
+            <th>Preço</th>
             <th>Combustivel</th>
-            <th>Mudanca</th>
-            <th>Caixa</th>
             <th>Classificação</th>
             <th colspan="2">op&ccedil&otildees</th>
         </tr>
@@ -59,16 +56,14 @@ $result=mysqli_query($con,$sql);
             ?>
             <tr style="text-align: center">
                 <td><?php echo $dados['motaId']?></td>
+                <td><?php echo $dados['marcaNome']?></td>
                 <td><?php echo $dados['motaNome']?></td>
-                <td><?php echo $dados['motaMarcaId']?></td>
-                <td><?php echo $dados['motaImagemURL']?></td>
+                <td><?php echo $dados['motaModelo']?></td>
+                <td><img width="120" src="../<?php echo $dados['motaImagemURL']?>"></td>
                 <td><?php echo $dados['motaPreco']?></td>
-                <td><?php echo $dados['motaCilindrada']?></td>
-                <td><?php echo $dados['motaAno']?></td>
                 <td><?php echo $dados['motaCombustivel']?></td>
-                <td><?php echo $dados['motaMudanca']?></td>
-                <td><?php echo $dados['motaCaixa']?></td>
-                <td><?php echo $dados['motaClassificacao']?></td>
+                <td><?php echo $dados['classificacaoNome']?></td>
+                <td><a href="editaChaves.php?id=<?php echo $dados['motaId']?>"><button type="button" class="btn btn-warning btn-sm"><i class="fa fa-cog" style="color: white"></i>&nbsp;Especificações</button></a></td>
                 <td><a href="editaMota.php?id=<?php echo $dados['motaId']?>"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-pencil" style="color: white"></i>&nbsp;Edita</button></a></td>
                 <td><a href="#" onclick="confirmaEliminaMota(<?php echo $dados['motaId']?>);"><button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash" style="color: white"></i>&nbsp;Elimina</button></a></td>
             </tr>
