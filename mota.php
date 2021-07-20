@@ -12,8 +12,8 @@ $dados = mysqli_fetch_array($result);
         <div class="row">
             <div class="col-md-12">
                 <div class="text-content">
-                    <h2><?php echo $dados['motaNome']?></h2>
-                    <h4><?php echo $dados['motaPreco']?> €</h4>
+                    <h2>kawasaki H2R</h2>
+                    <h4>32.000€</h4>
 
                 </div>
             </div>
@@ -28,19 +28,73 @@ $dados = mysqli_fetch_array($result);
         <div class="row">
             <div class="col-md-6">
                 <div>
-                    <img src="assets/images/cbr1000rr-rAmostra.png" alt="" class="img-fluid wc-image">
+                    <img src="assets/images/Ninjazx1.png" alt="" class="img-fluid wc-image">
+                </div>
+                <br>
+                <div class="row bg">
+                    <div class="col-sm-4 col-6">
+                        <div>
+
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-sm-4 col-6">
+                        <div>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-sm-4 col-6">
+                        <div>
+
+                        </div>
+                        <br>
+                    </div>
+
+                    <div class="col-sm-4 col-6">
+                        <div>
+
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-sm-4 col-6">
+                        <div>
+
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-sm-4 col-6">
+                        <div>
+
+                        </div>
+                        <br>
+                    </div>
                 </div>
             </div>
 
             <div class="col-md-6">
-                <form action="#" method="post" class="form"><br><br>
+                <form action="#" method="post" class="form">
                     <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Type</span>
+
+                                <strong class="pull-right">Veiculo Novo</strong>
+                            </div>
+                        </li>
 
                         <li class="list-group-item">
                             <div class="clearfix">
                                 <span class="pull-left">Fabricante</span>
 
-                                <strong class="pull-right"><?php echo $dados['marcaNome']?></strong>
+                                <strong class="pull-right">kawasaki</strong>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left"> Ano</span>
+
+                                <strong class="pull-right">2020</strong>
                             </div>
                         </li>
 
@@ -48,7 +102,7 @@ $dados = mysqli_fetch_array($result);
                             <div class="clearfix">
                                 <span class="pull-left"> Modelo</span>
 
-                                <strong class="pull-right"><?php echo $dados['motaNome']?></strong>
+                                <strong class="pull-right">Kawasaki H2R</strong>
                             </div>
                         </li>
 
@@ -57,15 +111,15 @@ $dados = mysqli_fetch_array($result);
                             <div class="clearfix">
                                 <span class="pull-left">Combustível</span>
 
-                                <strong class="pull-right"><?php echo $dados['motaCombustivel']?></strong>
+                                <strong class="pull-right">Gasolina</strong>
                             </div>
                         </li>
 
                         <li class="list-group-item">
                             <div class="clearfix">
-                                <span class="pull-left">Potencia</span>
+                                <span class="pull-left">Potência</span>
 
-                                <strong class="pull-right"><?php echo $dados['motaCilindrada']?> cc</strong>
+                                <strong class="pull-right">217 cv hp</strong>
                             </div>
                         </li>
 
@@ -74,7 +128,7 @@ $dados = mysqli_fetch_array($result);
                             <div class="clearfix">
                                 <span class="pull-left">mudanças</span>
 
-                                <strong class="pull-right"><?php echo $dados['motaMudanca']?></strong>
+                                <strong class="pull-right">Manual</strong>
                             </div>
                         </li>
 
@@ -82,7 +136,7 @@ $dados = mysqli_fetch_array($result);
                             <div class="clearfix">
                                 <span class="pull-left">caixa de mudanças</span>
 
-                                <strong class="pull-right"><?php echo $dados['motaCaixa']?></strong>
+                                <strong class="pull-right">6</strong>
                             </div>
                         </li>
 
@@ -96,42 +150,26 @@ $dados = mysqli_fetch_array($result);
 <div class="section">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <h2>Discrições da mota</h2>
                 <div class="left-content">
 
-
-
                     <div class="content">
-
                         <table class="table table-sm table-spec">
                             <tbody>
-                            <?php
-                            $sqlEs="select * from motas inner join motaChaves on motaId=motaChaveMotaId
-                    inner join chaves on motaChaveChaveId=chaveId where motaId=".$id;
-                            $resultEs = mysqli_query($con,$sqlEs);
-                            ?>
-
                             <tr>
                                 <th width="40%">Especificação</th>
                                 <th>Valor</th>
                             </tr>
-                            <?php
-                            while  ($dadosEs=mysqli_fetch_array($resultEs)){
-                            ?>
+
                             <tr>
-                                <td class="title"><?php echo $dadosEs['chaveNome']?></td>
-                                <td class="result"><?php echo $dadosEs['motaChaveValor']?></td>
+                                <td class="title">DIÂMETRO X CURSO (mm)</td>
+                                <td class="result">81 mm x 48,5 mm</td>
                             </tr>
 
-                                <?php
-                            }
-                            ?>
-                            <!--
                             <tr>
-                                <td class="title">
-                                </td><td class="result">PGM-FI</td>
-
+                                <td class="title">ALIMENTAÇÃO</td>
+                                <td class="result">PGM-FI</td>
                             </tr>
 
                             <tr>
@@ -173,74 +211,18 @@ $dados = mysqli_fetch_array($result);
                                 <td class="title">DIÂMETRO CORPO ACELERADOR</td>
                                 <td class="result">52 mm</td>
                             </tr>
--->
-                            </tbody>
 
+                            </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-            <div class="right-content">
-                <div class="col-md-3">
-                    <img class="d-block w-auto"src="assets/images/cbr10002foto.png">
-                </div>
-            </div>
+
 
         </div>
     </div>
+</div>
 
-
-    <div class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="section-heading">
-                        <h2>Contact Details</h2>
-                    </div>
-
-                    <div class="left-content">
-                        <p>
-                            <span>Name</span>
-
-                            <br>
-
-                            <strong>John Smith</strong>
-                        </p>
-
-                        <p>
-                            <span>Phone</span>
-
-                            <br>
-
-                            <strong>
-                                <a href="tel:123-456-789">123-456-789</a>
-                            </strong>
-                        </p>
-
-                        <p>
-                            <span>Mobile phone</span>
-
-                            <br>
-
-                            <strong>
-                                <a href="tel:456789123">456789123</a>
-                            </strong>
-                        </p>
-
-                        <p>
-                            <span>Email</span>
-
-                            <br>
-
-                            <strong>
-                                <a href="mailto:john@carsales.com">john@carsales.com</a>
-                            </strong>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 <?php
 bottom();
 ?>

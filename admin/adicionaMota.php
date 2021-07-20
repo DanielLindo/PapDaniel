@@ -31,34 +31,27 @@ top();
                         <label for="motaAno">Ano: </label>
                         <input type="text" class="form-control" id="motaAno" name="anoMota">
                     </div><br>
-                    <br>
                     <div class="form-group">
-                        <label for="motaCaixa">Caixa: </label>
-                        <input type="number" class="form-control" id="motaCaixa" name="caixaMota">
+                        <label for="motaCaixa">Tipo de mudanças: </label><br>
+                        <small><input checked type="radio"  name="caixaTipo" value="manual">
+                            <label for="gasolina">Manual</label>
+                            <input type="radio" name="caixaTipo" value="automatica">
+                            <label for="gasoleo">Automática</label><br></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="motaCaixa">Caixa de mudanças: </label>
+                        <input type="number" class="form-control" id="motaCaixa" name="caixaNum">
                     </div><br>
-                    <label >Combustivel: </label>
-                    <br>
-                        <?php
-                        $sql="select * from motas";
-                        $resultCom=mysqli_query($con,$sql);
-                        $dadosCom=mysqli_fetch_array($resultCom);
-                        if ($dadosCom['motaCombustivel']==='gasolina'){?>
-                            <small><input checked type="radio" id="sim" name="combustivel" value="sim">
-                                    <label for="gasolina">gasolina</label>
-                                    <input type="radio" id="nao" name="freelance" value="nao">
-                                    <label for="gasoleo">gasoleo</label><br></small>
-                        <?php } else{
-                            ?>
-                           <small><input type="radio" id="sim" name="freelance" value="sim">
-                                    <label for="gasolina">gasolina</label>
-                                    <input checked type="radio" id="nao" name="freelance" value="nao">
-                                    <label for="gasoleo">gasoleo</label><br></small>
-                        <?php } ?>
 
-                    <br>
-                    <br>
-                    <br>
-                    <select name="marcaMota">
+                    <div class="form-group">
+                        <label for="motaCaixa">Combustível: </label><br>
+                        <small><input checked type="radio" id="sim" name="combustivel" value="gasolina">
+                            <label for="gasolina">gasolina</label>
+                            <input type="radio" id="nao" name="combustivel" value="gasoleo">
+                            <label for="gasoleo">gasoleo</label><br></small>
+                    </div><br>
+
+                    <select name="marcaMota"class="form-control form-control-lg">
                         <option value="-1">Escolha a marca...</option>
                         <?php
                         $sql="select * from marcas ";
@@ -73,34 +66,19 @@ top();
 
                     </select>
                     <br>
-                    <br>
-                    <br>
 
 
-                    <select name="marcaMota">
-                   <option value="-1">Escolha a marca...</option>
-                            <?php
-                            $sql="select * from marcas ";
-                            $result=mysqli_query($con,$sql);
-                            while ($dados=mysqli_fetch_array($result)){
-                                ?>
-                                <option value="<?php echo $dados['marcaId']?>"><?php echo $dados['marcaNome']?></option>
-                                <?php
-                            }
+                    <div class="form-group">
+                        <label for="motaCaixa">Destaque: </label><br>
+                        <small><input checked type="radio" id="sim" name="destaque" value="sim">
+                            <label for="gasolina">Sim</label>
+                            <input type="radio" id="nao" name="destaque" value="nao">
+                            <label for="gasoleo">Não</label><br></small>
+                    </div><br>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Adicionar</button>
+                    </div>
 
-                            ?>
-                        <br>
-                    </select>
-                    <br>
-                    <br>
-                    <br>
-                    <label>Destaque</label>
-
-                    <p><input type="radio" name="destaqueMota" value="sim" >&nbsp;Sim</p>
-                    <p><input type="radio" name="destaqueMota" value="nao" >&nbsp;Não</p>
-
-                    <br>
-                    <input type="Submit" value="Adiciona"><br>
                 </form>
             </div>
 
