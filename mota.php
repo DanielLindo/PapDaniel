@@ -12,8 +12,8 @@ $dados = mysqli_fetch_array($result);
         <div class="row">
             <div class="col-md-12">
                 <div class="text-content">
-                    <h2>kawasaki H2R</h2>
-                    <h4>32.000€</h4>
+                    <h2><?php echo $dados['marcaNome']?></h2>
+                    <h4><?php echo $dados['precoMota']?></h4>
 
                 </div>
             </div>
@@ -28,7 +28,7 @@ $dados = mysqli_fetch_array($result);
         <div class="row">
             <div class="col-md-6">
                 <div>
-                    <img src="assets/images/Ninjazx1.png" alt="" class="img-fluid wc-image">
+                    <img src="<?php echo $dados['motaImagemURL']?>"alt="" class="img-fluid wc-image"></td>
                 </div>
                 <br>
                 <div class="row bg">
@@ -75,11 +75,7 @@ $dados = mysqli_fetch_array($result);
                 <form action="#" method="post" class="form">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
-                            <div class="clearfix">
-                                <span class="pull-left">Type</span>
 
-                                <strong class="pull-right">Veiculo Novo</strong>
-                            </div>
                         </li>
 
                         <li class="list-group-item">

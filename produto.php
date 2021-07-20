@@ -1,16 +1,27 @@
 <?php
 include_once ("includes/config.inc.php");
 include_once("includes/body.inc.php");
-$id=intval($_GET['idMota']);
+$id=intval($_GET['id']);
 $sql="select * from produtos where produtoId=$id";
 $result=mysqli_query($con,$sql);
 top();
 ?>
 
-<div id="main" class="alt">
+<<div class="page-heading about-heading header-text" style="background-image: url(assets/images/heading-6-1920x500.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-content">
+                    <h2><?php echo $dados['marcaNome']?></h2>
+                    <h4><?php echo $dados['precoMota']?></h4>
 
-    <!-- One -->
-    <section id="one">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="one">
         <?php
         while($dados=mysqli_fetch_array($result)){
 
@@ -38,44 +49,7 @@ top();
         </div>
 
 
-        <div class="inner">
-            <section>
-                <header class="major">
-                    <h1>Características</h1>
-                </header>
 
-                <form method="post" action="#">
-
-                    <div class="fields">
-                        <?php
-                        $sql="select categoriaChaveId, categoriaChaveNome
-                from categoriachaves inner join chaves on categoriaChaveId = chaveCategoriaChaveId
-                inner join produtochaves on chaveId = produtoChaveChaveId
-                where produtoChaveProdutoId=$id group by categoriaChaveId";
-                        $resultCategorias=mysqli_query($con,$sql);
-                        while($dadosCategorias=mysqli_fetch_array($resultCategorias)){
-                            $sqlChaves="select chaveNome, produtoChaveValor
-                          from chaves inner join produtochaves on chaveId=produtoChaveChaveId
-                          where chaveCategoriaChaveId=".$dadosCategorias['categoriaChaveId']." and 
-                          produtoChaveProdutoId=$id";
-                            $resChaves=mysqli_query($con,$sqlChaves);
-                            ?>
-                            <div class="field half">
-                                <label for="field-1"><b><?php echo $dadosCategorias['categoriaChaveNome']?></b></label>
-                                <?php
-                                while($dadosChaves=mysqli_fetch_array($resChaves)){
-                                    ?>
-                                    <p><?php echo $dadosChaves['chaveNome']?> : <?php echo $dadosChaves['produtoChaveValor']?></p>
-
-                                    <?php
-
-                                }
-                                ?>
-                            </div>
-                            <?php
-                        }
-
-                        ?>
                     </div>
                 </form>
             </section>

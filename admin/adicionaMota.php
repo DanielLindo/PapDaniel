@@ -79,9 +79,6 @@ top();
                             <input type="radio" id="nao" name="destaqueMota" value="nao">
                             <label for="gasoleo">Não</label><br></small>
                     </div><br>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-success">Adicionar</button>
-                    </div>
 
                     <select name="classificacaoMarca"class="form-control form-control-lg">
                         <option value="-1">Escolha a classificação da mota...</option>
@@ -98,7 +95,11 @@ top();
                         ?>
 
                     </select>
+                    <br>
 
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Adicionar</button>
+                    </div>
 
 
                 </form>

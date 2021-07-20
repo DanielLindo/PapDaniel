@@ -103,7 +103,6 @@ function top(){
                     </li>
 -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Acessórios</a>
                         <div class="dropdown-menu">
                             <?php
                             $sql="select * from categorias";
