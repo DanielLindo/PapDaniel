@@ -2,8 +2,8 @@
 include_once("includes/body.inc.php");
 top();
 
-$id=intval($_GET['id']);
-$sql="select * from motas";
+//$id=intval($_GET['id']);
+$sql="select * from classificacoes inner join motas on classificacaoId = motaClassificacaoId inner join marcas on  motaMarcaId = motaId";
 $result = mysqli_query($con,$sql);
 $dados = mysqli_fetch_array($result);
 ?>
@@ -20,15 +20,15 @@ $dados = mysqli_fetch_array($result);
                     <div class="product-item">
                         <img src="<?php echo $dados['motaImagemURL']?>" alt="">
                         <div class="down-content">
-                            <a href="mota.php?idMota=<?php echo $dados['motaId']?>"><h4>EXEMPLO</h4></a>
+                            <a href="mota.php?idMota=<?php echo $dados['motaId']?>"><h4><?php echo $dados['motaNome']?></h4></a>
 
                             <h6><?php echo $dados['motaPreco']?></h6>
 
-                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2020&nbsp;/&nbsp;</p>
+                            <p>190 hp &nbsp;/&nbsp; <?php echo $dados['motaCombustivel']?> &nbsp;/&nbsp; <?php echo $dados['motaAno']?>&nbsp;/&nbsp;</p>
 
                             <small>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Author"><i class="fa fa-cube"></i> 217 cv</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
+                                <strong title="Author"><i class="fa fa-cube"></i> <?php echo $dados['motaCilindrada']?></strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Views"><i class="fa fa-cog"></i> <?php echo $dados['motaMudanca']?></strong>
                             </small>
                         </div>
                     </div>

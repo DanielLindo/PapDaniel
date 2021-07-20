@@ -31,19 +31,30 @@ top();
                         <label for="motaAno">Ano: </label>
                         <input type="text" class="form-control" id="motaAno" name="anoMota">
                     </div><br>
-                    <select name="marcaMota">
-                        <option value="-1">Escolha a marca...</option>
+                    <br>
+                    <div class="form-group">
+                        <label for="motaCaixa">Caixa: </label>
+                        <input type="number" class="form-control" id="motaCaixa" name="caixaMota">
+                    </div><br>
+                    <label >Combustivel: </label>
+                    <br>
                         <?php
-                        $sql="select * from motas where motaCombustivel";
-                        $result=mysqli_query($con,$sql);
-                        while ($dados=mysqli_fetch_array($result)){
+                        $sql="select * from motas";
+                        $resultCom=mysqli_query($con,$sql);
+                        $dadosCom=mysqli_fetch_array($resultCom);
+                        if ($dadosCom['motaCombustivel']==='gasolina'){?>
+                            <small><input checked type="radio" id="sim" name="combustivel" value="sim">
+                                    <label for="gasolina">gasolina</label>
+                                    <input type="radio" id="nao" name="freelance" value="nao">
+                                    <label for="gasoleo">gasoleo</label><br></small>
+                        <?php } else{
                             ?>
-                            <option value="<?php echo $dados['marcaId']?>"><?php echo $dados['marcaNome']?></option>
-                            <?php
-                        }
+                           <small><input type="radio" id="sim" name="freelance" value="sim">
+                                    <label for="gasolina">gasolina</label>
+                                    <input checked type="radio" id="nao" name="freelance" value="nao">
+                                    <label for="gasoleo">gasoleo</label><br></small>
+                        <?php } ?>
 
-                        ?>
-                    </select>
                     <br>
                     <br>
                     <br>
@@ -63,10 +74,8 @@ top();
                     </select>
                     <br>
                     <br>
-                    <div class="form-group">
-                        <label for="motaCaixa">Caixa: </label>
-                        <input type="number" class="form-control" id="motaCaixa" name="caixaMota">
-                    </div><br>
+                    <br>
+
 
                     <select name="marcaMota">
                    <option value="-1">Escolha a marca...</option>
