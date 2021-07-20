@@ -20,7 +20,11 @@ top();
                         <input type="number" class="form-control" id="motaPreco" name="precoMota"><br>
                     </div><br>
                     <div class="form-group">
-                        <label for="motaImagemUrl">Imagem: </label>
+                        <label for="modeloMota">Modelo: </label>
+                        <input type="text" class="form-control" id="motaModelo" name="modeloMota"><br>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="imagemMota">Imagem: </label>
                         <input type="file" class="form-control" id="motaImagemUrl" name="imagemMota">
                     </div><br>
                     <div class="form-group">
@@ -32,7 +36,7 @@ top();
                         <input type="text" class="form-control" id="motaAno" name="anoMota">
                     </div><br>
                     <div class="form-group">
-                        <label for="motaCaixa">Tipo de mudanças: </label><br>
+                        <label for="caixaTipo">Tipo de mudanças: </label><br>
                         <small><input checked type="radio"  name="caixaTipo" value="manual">
                             <label for="gasolina">Manual</label>
                             <input type="radio" name="caixaTipo" value="automatica">
@@ -40,18 +44,18 @@ top();
                     </div>
                     <div class="form-group">
                         <label for="motaCaixa">Caixa de mudanças: </label>
-                        <input type="number" class="form-control" id="motaCaixa" name="caixaNum">
+                        <input type="number" class="form-control" id="motaCaixa" name="motaCaixa">
                     </div><br>
 
                     <div class="form-group">
-                        <label for="motaCaixa">Combustível: </label><br>
-                        <small><input checked type="radio" id="sim" name="combustivel" value="gasolina">
+                        <label for="motaCombustivel">Combustível: </label><br>
+                        <small><input checked type="radio" id="sim" name="motaCombustivel" value="gasolina">
                             <label for="gasolina">gasolina</label>
-                            <input type="radio" id="nao" name="combustivel" value="gasoleo">
+                            <input type="radio" id="nao" name="motaCombustivel" value="gasoleo">
                             <label for="gasoleo">gasoleo</label><br></small>
                     </div><br>
 
-                    <select name="marcaMota"class="form-control form-control-lg">
+                    <select name="motaMarca"class="form-control form-control-lg">
                         <option value="-1">Escolha a marca...</option>
                         <?php
                         $sql="select * from marcas ";
@@ -69,10 +73,10 @@ top();
 
 
                     <div class="form-group">
-                        <label for="motaCaixa">Destaque: </label><br>
-                        <small><input checked type="radio" id="sim" name="destaque" value="sim">
+                        <label for="destaqueMota">Destaque: </label><br>
+                        <small><input checked type="radio" id="sim" name="destaqueMota" value="sim">
                             <label for="gasolina">Sim</label>
-                            <input type="radio" id="nao" name="destaque" value="nao">
+                            <input type="radio" id="nao" name="destaqueMota" value="nao">
                             <label for="gasoleo">Não</label><br></small>
                     </div><br>
                     <div class="form-group">

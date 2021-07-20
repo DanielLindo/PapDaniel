@@ -1,7 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 top();
-$sql = "select * from  classificacoes";
+$sql = "select * from  classificacoes inner join tipos on classificacaoId = tipoId";
 $result=mysqli_query($con,$sql);
 ?>
 <script>
