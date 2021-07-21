@@ -63,7 +63,7 @@ $result=mysqli_query($con,$sql);
                 <td><?php echo $dados['motaPreco']?></td>
                 <td><?php echo $dados['motaCombustivel']?></td>
                 <td><?php echo $dados['classificacaoNome']?></td>
-                <td><a href="editaChaves.php?id=<?php echo $dados['motaId']?>"><button type="button" class="btn btn-warning btn-sm"><i class="fa fa-cog" style="color: white"></i>&nbsp;Especificações</button></a></td>
+                <td><a href="produtoChaves.php?id=<?php echo $dados['motaId']?>"><button type="button" class="btn btn-warning btn-sm"><i class="fa fa-cog" style="color: white"></i>&nbsp;Especificações</button></a></td>
                 <td><a href="editaMota.php?id=<?php echo $dados['motaId']?>"><button type="button" class="btn btn-primary btn-sm"><i class="fa fa-pencil" style="color: white"></i>&nbsp;Edita</button></a></td>
                 <td><a href="#" onclick="confirmaEliminaMota(<?php echo $dados['motaId']?>);"><button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash" style="color: white"></i>&nbsp;Elimina</button></a></td>
             </tr>
