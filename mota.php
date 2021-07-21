@@ -1,9 +1,9 @@
 <?php
 include_once("includes/body.inc.php");
 top();
-$id=intval($_GET['id']);
+$idMota=intval($_GET['idMota']);
  $sql="select * from  motas inner join marcas on marcaId=motaMarcaId inner join classificacoes on classificacaoId=motaClassificacaoId";
-$sql.=" where motaId=".$id;
+echo $sql.=" where motaId=".$idMota;
 $result = mysqli_query($con,$sql);
  mysqli_affected_rows($con);
 $dados = mysqli_fetch_array($result);
@@ -160,56 +160,21 @@ $dados = mysqli_fetch_array($result);
                                 <th width="40%">Especificação</th>
                                 <th>Valor</th>
                             </tr>
-
+                            <?php
+                            $sql="select * from motas inner join motachaves on motaId=motaChaveMotaId";
+                            $sql.=" inner join chaves on chaveId=motaChaveChaveId";
+                            $sql.=" where motaId=".$idMota;
+                            $res=mysqli_query($con,$sql);
+                            while($dados=mysqli_fetch_array($res)){
+                            ?>
                             <tr>
-                                <td class="title">DIÂMETRO X CURSO (mm)</td>
-                                <td class="result">81 mm x 48,5 mm</td>
+                                <td class="title"><?php echo $dados['chaveNome']?></td>
+                                <td class="result"><?php echo $dados['motaChaveValor']?></td>
                             </tr>
+                            <?php
+                            }
+                            ?>
 
-                            <tr>
-                                <td class="title">ALIMENTAÇÃO</td>
-                                <td class="result">PGM-FI</td>
-                            </tr>
-
-                            <tr>
-                                <td class="title">TAXA DE COMPRESSÃO</td>
-                                <td class="result">13,0 : 1</td>
-                            </tr>
-
-                            <tr>
-                                <td class="title">EMISSÕES C02 (g/km)</td>
-                                <td class="result">148</td>
-                            </tr>
-
-                            <tr>
-                                <td class="title">CILINDRADA (cm3)</td>
-                                <td class="result">999,9 cm³</td>
-                            </tr>
-
-                            <tr>
-                                <td class="title">TIPO DE MOTOR</td>
-                                <td class="result">Tetracilíndrico em linha a quatro tempos, DOHC, arrefecido por água</td>
-                            </tr>
-
-                            <tr>
-                                <td class="title">IGNIÇÃO</td>
-                                <td class="result">Eletrónica, digital, transistorizada</td>
-                            </tr>
-
-                            <tr>
-                                <td class="title">CAPACIDADE DE ÓLEO (Litros)</td>
-                                <td class="result">3,8 litros</td>
-                            </tr>
-
-                            <tr>
-                                <td class="title">ARRANQUE</td>
-                                <td class="result">Elétrico</td>
-                            </tr>
-
-                            <tr>
-                                <td class="title">DIÂMETRO CORPO ACELERADOR</td>
-                                <td class="result">52 mm</td>
-                            </tr>
 
                             </tbody>
                         </table>

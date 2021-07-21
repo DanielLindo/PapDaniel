@@ -2,11 +2,13 @@
 include_once("includes/body.inc.php");
 top();
 
-$id=intval($_GET['id']);
-$sql="select * from classificacoes left join motas on classificacaoId = motaClassificacaoId left join tipos on tipoId=classificacaoNome left join marcas on motaMarcaId=marcaId where motaId=".$id;
+$classId=intval($_GET['classId']);
+$sql="select * from classificacoes left join motas on classificacaoId = motaClassificacaoId left join tipos on tipoId=classificacaoNome left join marcas on motaMarcaId=marcaId ";
+$sql.=" where classificacaoId=".$classId;
 echo ($sql);
 $result = mysqli_query($con,$sql);
 $dados = mysqli_fetch_array($result);
+$result = mysqli_query($con,$sql);
 ?>
 <main id="main">
     <br><br> <br> <br> <br>
@@ -16,6 +18,10 @@ $dados = mysqli_fetch_array($result);
                 <h2><?php echo $dados['classificacaoNome']?></h2>
             </div>
             <div class="row">
+                <?php
+                while ($dados = mysqli_fetch_array($result)){
+                ?>
+
 
                 <div class="col-lg-4 col-md-6">
                     <div class="product-item">
@@ -35,6 +41,9 @@ $dados = mysqli_fetch_array($result);
                     </div>
 
         </div>
+                <?php
+                }
+                ?>
 </main>
 
 

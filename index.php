@@ -50,7 +50,7 @@ $result = mysqli_query($con,$sql);
 
                         <img width="500" src="<?php echo $dados['motaImagemURL']?>" alt="" class="img-fluid wc-image"></td>
                         <div class="down-content">
-                            <a href="mota.php?id=<?php echo $dados['motaId']?>"><h4><?php echo $dados['motaNome']?></h4></a>
+                            <a href="mota.php?idMota=<?php echo $dados['motaId']?>"><h4><?php echo $dados['motaNome']?></h4></a>
 
                             <h6><?php echo $dados['motaPreco']?>€</h6>
 
