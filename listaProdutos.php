@@ -3,7 +3,7 @@ include_once("includes/body.inc.php");
 top();
 
 $id=intval($_GET['id']);
-$sql="select * from classificacoes left join motas on classificacaoId = motaClassificacaoId left join tipos on tipoId=classificacaoNome left join marcas on motaMarcaId=marcaId where motaId=".$id;
+$sql="select * from classificacoes left join produtos on classificacaoId = motaClassificacaoId left join tipos on tipoId=classificacaoNome left join marcas on motaMarcaId=marcaId where motaId=".$id;
 echo ($sql);
 $result = mysqli_query($con,$sql);
 $dados = mysqli_fetch_array($result);
@@ -19,11 +19,11 @@ $dados = mysqli_fetch_array($result);
 
                 <div class="col-lg-4 col-md-6">
                     <div class="product-item">
-                        <img src="<?php echo $dados['motaImagemURL']?>" alt="">
+                        <img src="<?php echo $dados['produtoURL']?>" alt="">
                         <div class="down-content">
-                            <a href="mota.php?idMota=<?php echo $dados['motaId']?>"><h4><?php echo $dados['motaNome']?></h4></a>
+                            <a href="produto.php?idMota=<?php echo $dados['produtoId']?>"><h4><?php echo $dados['produtoNome']?></h4></a>
 
-                            <h6><?php echo $dados['motaPreco']?></h6>
+                            <h6><?php echo $dados['produtoPreco']?></h6>
 
                             <p>190 hp &nbsp;/&nbsp; <?php echo $dados['motaCombustivel']?> &nbsp;/&nbsp; <?php echo $dados['motaAno']?>&nbsp;/&nbsp;</p>
 

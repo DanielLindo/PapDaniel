@@ -1,7 +1,9 @@
 <?php
 include_once("includes/body.inc.php");
 top();
-$sql="select * from motas";  //inner join marcas on motaMarcaId=marcaId inner join classificacoes on classificacaoTipoId=tipoId ";
+
+//$id=intval($_GET['id']);
+$sql="select * from motas inner join marcas on motaMarcaId=marcaId";
 
 $result = mysqli_query($con,$sql);
 ?>
@@ -40,14 +42,15 @@ $result = mysqli_query($con,$sql);
             </div>
 
             <div class="row">
+                <?php
+                while ($dados=mysqli_fetch_array($result)) {
+                    ?>
                 <div class="col-lg-4 col-md-6">
                     <div class="product-item">
-                        <?php
-                        while ($dados=mysqli_fetch_array($result)) {
-                        ?>
-                        <img width="600" src="<?php echo $dados['motaImagemURL']?>" alt="">
+
+                        <img width="500" src="<?php echo $dados['motaImagemURL']?>" alt="" class="img-fluid wc-image"></td>
                         <div class="down-content">
-                            <a href="mota.php?idMota=<?php echo $dados['motaId']?>"><h4><?php echo $dados['motaNome']?></h4></a>
+                            <a href="mota.php?id=<?php echo $dados['motaId']?>"><h4><?php echo $dados['motaNome']?></h4></a>
 
                             <h6><?php echo $dados['motaPreco']?>€</h6>
 
@@ -70,48 +73,43 @@ $result = mysqli_query($con,$sql);
         </div>
     </div>
 </div>
-
+<br>
+    <br>
+    <br>
 <?php
-$sql.="select * from produtos"; //inner join categorias on produtoCategoriaId=categoriaId
-$resultAce = mysqli_query($con,$sql);
+$sql1="select * from produtos inner join categorias on produtoCategoriaId=categoriaId";
+$resultAce = mysqli_query($con,$sql1);
 
 ?>
-
-
-    <div class="services" style="background-image: url(assets/images/6motosBackGround.png);" >
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="section-heading">
-                    <h2>Acessórios</h2>
-                    <?php
-                    while ($dadosEs=mysqli_fetch_array($result)) {
-                    ?>
-
-                    <div class="product-item">
-                        <a href="produto.php?id=<?php echo $dadosEs["produtoId"]?>">  <td><img width="120" src="<?php echo $dadosEs['produtoURL']?>"></td></a>
-                        <div class="down-content">
-
-                            <a href="produto.php?id=<?php echo $dadosEs["produtoId"]?>"><h4><?php echo $dadosEs['produtoNome']?></h4></a>
-
-                            <h6><?php echo $dadosEs['produtoPreco']?> €</h6>
-
-                            <p> <?php echo $dadosEs['produtoDestaque']?> &nbsp;/&nbsp; <?php echo $dadosEs['motaAno']?></p>
-
-                            <small>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Author"><i class="fa fa-cube"></i><?php echo $dadosEs['motaCilindrada']?></strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-
-
-                            </small>
+    <div class="latest-products">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading" style="text-align: center">
+                        <h2>Produtos em destaque</h2>
+                    </div>
                 </div>
+                         <?php
+                         while ($dadosEs=mysqli_fetch_array($resultAce)) {
+                          ?>
+                          <div class="col-lg-4 col-md-6">
+                              <div class="product-item">
+
+                                <img width="500" src="<?php echo $dadosEs['produtoURL']?>" alt="">
+                                <div class="down-content">
+                                    <a href="acessorio.php?catId=<?php echo $dadosEs['produtoId']?>"><h4><?php echo $dadosEs['produtoNome']?></h4></a>
+                                     <h6><?php echo $dadosEs['produtoPreco']?>€</h6>
+                                </div>
+                            </div>
+
+                        </div>
+                             <?php
+                         }
+                         ?>
             </div>
         </div>
     </div>
-</div>
-<?php
-}
-?>
+
 
 <!--<div class="happy-clients">
     <div class="container">

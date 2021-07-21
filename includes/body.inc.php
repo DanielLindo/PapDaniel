@@ -75,7 +75,7 @@ function top(){
                                         $resC=mysqli_query($con,$sql);
                                         while ($dadosC=mysqli_fetch_array($resC)){
                                         ?>
-                                        <a class="dropdown-item" href="listaMotas.php?catId=<?php echo $dadosC['classificacaoId']?>"><?php echo $dadosC['classificacaoNome']?></a>
+                                        <a class="dropdown-item" href="listaMotas.php?id=<?php echo $dadosC['classificacaoId']?>"><?php echo $dadosC['classificacaoNome']?></a>
                                         <?php
                                         }
                                         ?>

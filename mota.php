@@ -2,7 +2,7 @@
 include_once("includes/body.inc.php");
 top();
 $id=intval($_GET['id']);
-$sql="select * from motas inner join marcas on motaMarcaId=marcaId where motaId=".$id;
+$sql="select * from  motas inner join marcas on marcaId=motaMarcaId inner join classificacoes on classificacaoId=motaClassificacaoId=".$id;
 $result = mysqli_query($con,$sql);
 $dados = mysqli_fetch_array($result);
 ?>
@@ -13,7 +13,7 @@ $dados = mysqli_fetch_array($result);
             <div class="col-md-12">
                 <div class="text-content">
                     <h2><?php echo $dados['marcaNome']?></h2>
-                    <h4><?php echo $dados['precoMota']?></h4>
+                    <h4><?php echo $dados['motaPreco']?>€</h4>
 
                 </div>
             </div>
@@ -82,7 +82,7 @@ $dados = mysqli_fetch_array($result);
                             <div class="clearfix">
                                 <span class="pull-left">Fabricante</span>
 
-                                <strong class="pull-right">kawasaki</strong>
+                                <strong class="pull-right"><?php echo $dados['marcaNome']?></strong>
                             </div>
                         </li>
 
@@ -90,7 +90,7 @@ $dados = mysqli_fetch_array($result);
                             <div class="clearfix">
                                 <span class="pull-left"> Ano</span>
 
-                                <strong class="pull-right">2020</strong>
+                                <strong class="pull-right"><?php echo $dados['motaAno']?></strong>
                             </div>
                         </li>
 
@@ -98,7 +98,7 @@ $dados = mysqli_fetch_array($result);
                             <div class="clearfix">
                                 <span class="pull-left"> Modelo</span>
 
-                                <strong class="pull-right">Kawasaki H2R</strong>
+                                <strong class="pull-right"><?php echo $dados['motaModelo']?></strong>
                             </div>
                         </li>
 
@@ -107,7 +107,7 @@ $dados = mysqli_fetch_array($result);
                             <div class="clearfix">
                                 <span class="pull-left">Combustível</span>
 
-                                <strong class="pull-right">Gasolina</strong>
+                                <strong class="pull-right"><?php echo $dados['motaCombustivel']?></strong>
                             </div>
                         </li>
 
@@ -115,7 +115,7 @@ $dados = mysqli_fetch_array($result);
                             <div class="clearfix">
                                 <span class="pull-left">Potência</span>
 
-                                <strong class="pull-right">217 cv hp</strong>
+                                <strong class="pull-right"><?php echo $dados['motaCilindrada']?></strong>
                             </div>
                         </li>
 
@@ -124,7 +124,7 @@ $dados = mysqli_fetch_array($result);
                             <div class="clearfix">
                                 <span class="pull-left">mudanças</span>
 
-                                <strong class="pull-right">Manual</strong>
+                                <strong class="pull-right"><?php echo $dados['motaMudanca']?></strong>
                             </div>
                         </li>
 
@@ -132,7 +132,7 @@ $dados = mysqli_fetch_array($result);
                             <div class="clearfix">
                                 <span class="pull-left">caixa de mudanças</span>
 
-                                <strong class="pull-right">6</strong>
+                                <strong class="pull-right"><?php echo $dados['motaCaixa']?></strong>
                             </div>
                         </li>
 

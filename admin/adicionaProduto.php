@@ -16,7 +16,7 @@ top();
                         <input type="text" class="form-control" id="produtoNome" name="nomeProduto">
                     </div><br>
                     <div class="form-group">
-                        <label for="produtoCategoria">Preco: </label>
+                        <label for="produtoPreco">Preco: </label>
                         <input type="number" class="form-control" id="produtoPreco" name="precoProduto"><br>
                     </div><br>
 
@@ -39,8 +39,10 @@ top();
                     <br>
                     <div class="form-group">
                         <label for="produtoURL">Imagem: </label>
-                        <input type="file" class="form-control" id="produtoImagemUrl" name="imagemProduto">
+                        <input type="file" class="form-control" id="produtoUrl" name="imagemProduto">
                     </div><br>
+
+
 
                     <br>
                     <label>Destaque</label>

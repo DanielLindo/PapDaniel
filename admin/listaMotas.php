@@ -13,7 +13,7 @@ $result=mysqli_query($con,$sql);
                 idMotas:id
             },
             success:function (result){
-                if(confirm('Confirma que deseja eliminar o tipo: '+result+"?"))
+                if(confirm('Confirma que deseja eliminar a mota: '+result+"?"))
                                     window.location="eliminaMota.php?id=" + id;
             }
         })

@@ -12,9 +12,8 @@ $sql="insert into produtos(produtoNome,produtoURL,produtoPreco, produtoCategoria
         values('".$nome."','images/".$imagem."','".$preco."',".$catId.",'".$destaque."')";
 mysqli_query($con,$sql);
 
-echo ($sql);
 
-//  header("location:listaProduto.php");
+header("location:listaProduto.php");
 ?>
 
 
