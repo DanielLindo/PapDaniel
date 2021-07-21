@@ -1,10 +1,10 @@
 <?php
 include_once("includes/body.inc.php");
 top();
-
-$id=intval($_GET['id']);
-$sql="select * from classificacoes left join produtos on classificacaoId = motaClassificacaoId left join tipos on tipoId=classificacaoNome left join marcas on motaMarcaId=marcaId where motaId=".$id;
 echo ($sql);
+$id=intval($_GET['id']);
+$sql="select * from produtos left join categorias on produtoId = produtoCategoriaId=".$id;
+
 $result = mysqli_query($con,$sql);
 $dados = mysqli_fetch_array($result);
 ?>
@@ -13,7 +13,7 @@ $dados = mysqli_fetch_array($result);
     <div class="container">
         <div class="down-content">
             <div class="section-heading" style="text-align: center">
-                <h2><?php echo $dados['classificacaoNome']?></h2>
+                <h2><?php echo $dados['categoriaNome']?></h2>
             </div>
             <div class="row">
 
@@ -25,11 +25,9 @@ $dados = mysqli_fetch_array($result);
 
                             <h6><?php echo $dados['produtoPreco']?></h6>
 
-                            <p>190 hp &nbsp;/&nbsp; <?php echo $dados['motaCombustivel']?> &nbsp;/&nbsp; <?php echo $dados['motaAno']?>&nbsp;/&nbsp;</p>
 
                             <small>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Author"><i class="fa fa-cube"></i> <?php echo $dados['motaCilindrada']?></strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <strong title="Views"><i class="fa fa-cog"></i> <?php echo $dados['motaMudanca']?></strong>
+
                             </small>
                         </div>
                     </div>

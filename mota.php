@@ -2,9 +2,12 @@
 include_once("includes/body.inc.php");
 top();
 $id=intval($_GET['id']);
-$sql="select * from  motas inner join marcas on marcaId=motaMarcaId inner join classificacoes on classificacaoId=motaClassificacaoId=".$id;
+ $sql="select * from  motas inner join marcas on marcaId=motaMarcaId inner join classificacoes on classificacaoId=motaClassificacaoId";
+$sql.=" where motaId=".$id;
 $result = mysqli_query($con,$sql);
+ mysqli_affected_rows($con);
 $dados = mysqli_fetch_array($result);
+
 ?>
 <!-- Page Content -->
 <div class="page-heading about-heading header-text" style="background-image: url(assets/images/heading-6-1920x500.jpg);">
@@ -12,7 +15,7 @@ $dados = mysqli_fetch_array($result);
         <div class="row">
             <div class="col-md-12">
                 <div class="text-content">
-                    <h2><?php echo $dados['marcaNome']?></h2>
+                    <h2><?php echo $dados['motaNome']?></h2>
                     <h4><?php echo $dados['motaPreco']?>€</h4>
 
                 </div>
