@@ -1,7 +1,7 @@
 <?php
 include_once("includes/body.inc.php");
 top();
-$id=intval($_GET['id']);
+$id=intval($_GET['catid']);
 $sql="select * from produtos left join categorias on produtoId = produtoCategoriaId=".$id;
 $result = mysqli_query($con,$sql);
 $dadosEs = mysqli_fetch_array($result);

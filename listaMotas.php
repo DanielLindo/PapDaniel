@@ -3,12 +3,12 @@ include_once("includes/body.inc.php");
 top();
 
 $classId=intval($_GET['classId']);
-$sql="select * from classificacoes left join motas on classificacaoId = motaClassificacaoId left join tipos on tipoId=classificacaoNome left join marcas on motaMarcaId=marcaId ";
+$sql="select * from classificacoes left join motas on classificacaoId = motaClassificacaoId left join tipos on tipoId=classificacaoNome left join marcas on motaMarcaId=marcaId";
 $sql.=" where classificacaoId=".$classId;
-echo ($sql);
 $result = mysqli_query($con,$sql);
 $dados = mysqli_fetch_array($result);
 $result = mysqli_query($con,$sql);
+
 ?>
 <main id="main">
     <br><br> <br> <br> <br>

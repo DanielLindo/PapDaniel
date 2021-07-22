@@ -95,7 +95,7 @@ function top(){
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Todo o Terreno</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="Moto4.html">Moto 4</a>
                             <a class="dropdown-item" href="MotosDeCompetiçao.html">Motas de competição</a>

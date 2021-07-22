@@ -60,7 +60,7 @@ $result=mysqli_query($con,$sql);
                 <td><?php echo $dados['motaNome']?></td>
                 <td><?php echo $dados['motaModelo']?></td>
                 <td><img width="120" src="../<?php echo $dados['motaImagemURL']?>"></td>
-                <td><?php echo $dados['motaPreco']?></td>
+                <td><?php echo $dados['motaPreco']?>€</td>
                 <td><?php echo $dados['motaCombustivel']?></td>
                 <td><?php echo $dados['classificacaoNome']?></td>
                 <td><a href="produtoChaves.php?id=<?php echo $dados['motaId']?>"><button type="button" class="btn btn-warning btn-sm"><i class="fa fa-cog" style="color: white"></i>&nbsp;Especificações</button></a></td>

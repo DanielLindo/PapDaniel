@@ -1,8 +1,7 @@
 <?php
 include_once ("includes/body.inc.php");
-$id=intval($_GET['id']);
-
-$sql="select * from motas where motaId=".$id;
+$idMota=intval($_GET['id']);
+$sql="select * from motas where motaId=".$idMota;
 $res=mysqli_query($con,$sql);
 $dados=mysqli_fetch_array($res);
 top();
@@ -20,69 +19,41 @@ top();
 
                     <input type="text" name="nomeMota" value="<?php echo $dados['motaNome']?>"><br>
 
-
+                    <br><label>Preço: </label>
+                    <input type="text" name="precoMota" value="<?php echo $dados['motaPreco']?>">
                     <br>
-
+                    <br><label>Modelo: </label>
+                    <input type="text" name="modeloMota" value="<?php echo $dados['motaModelo']?>">
+                    <br>
+                    <br>
                     <label>Imagem: </label>
                     <input type="file" name="imagemMota"><br>
                     <br><br> <img src="../<?php echo $dados['motaImagemURL']?>" width="220">
 
+<br>
+                    <br><label>Ano: </label>
+                    <input type="text" name="anoMota" value="<?php echo $dados['motaAno']?>">
                     <br>
                     <br>
-                    <label>Preço: </label>
-                    <input type="text" name="precoMota" value="<?php echo $dados['motaPreco']?>">
-                    <br>
-                    <br>
-                    <label>Categoria</label>
-                    <br>
-                    <select name="motaCategoria">
-                        <option value="-1">Escolha a categoria...</option>
-                        <?php
-                        $sql="select * from categorias order by categoriaNome";
-                        $result=mysqli_query($con,$sql);
-                        while ($dadosCat=mysqli_fetch_array($result)){
-                            ?>
-                            <option value="<?php echo $dadosCat['categoriaId']?>"
-                                <?php if( $dados['produtoCategoriaId'] == $dadosCat['categoriaId']) echo " selected ";?>
 
-                            ><?php echo $dadosCat['categoriaNome']?></option>
+                    <select name="classificacaoMarca"class="form-control form-control-lg">
+                        <option value="-1">Escolha a classificação da mota...</option>
+                        <?php
+                        $sql="select * from tipos inner join classificacoes on tipoId=classificacaoTipoId ";
+                        $sql.="order by tipoId ";
+                        $result=mysqli_query($con,$sql);
+                        while ($dadosEs=mysqli_fetch_array($result)){
+                            ?>
+                            <option value="<?php echo $dadosEs['classificacaoId']?>"><?php echo $dadosEs['tipoNome'].'-'.$dadosEs['classificacaoNome']?></option>
                             <?php
                         }
 
                         ?>
+
                     </select>
+
 <br>
-                    <br>
-                    <div class="form-group">
-                        <label for="motaCaixa">Caixa de mudanças: </label>
-                        <input type="number" class="form-control" id="motaCaixa" name="motaCaixa">
-                    </div><br>
 
-
-                    <div class="form-group">
-                            <label for="motaAno">Ano: </label>
-                            <input type="text" class="form-control" id="motaAno" name="anoMota">
-                        </div><br>
-
-                        <div class="form-group">
-                            <label for="modeloMota">Modelo: </label>
-                            <input type="text" class="form-control" id="motaModelo" name="modeloMota"><br>
-                        </div><br>
-                        <br>
-                    <br>
-                    <div class="form-group">
-                        <label for="motaCilindrada">Cilindrada: </label>
-                        <input type="text" class="form-control" id="motaCilindrada" name="cilindradaMota">
-                    </div><br>
-
-                    <br>
-                    <div class="form-group">
-                        <label for="caixaTipo">Tipo de mudanças: </label><br>
-                        <small><input checked type="radio"  name="caixaTipo" value="manual">
-                            <label for="gasolina">Manual</label>
-                            <input type="radio" name="caixaTipo" value="automatica">
-                            <label for="gasoleo">Automática</label><br></small>
-                    </div>
 
                     <div class="form-group">
                         <label for="motaCombustivel">Combustível: </label><br>
@@ -93,23 +64,14 @@ top();
                     </div><br>
                     <br>
                     <br>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Editar</button>
 
-                    <label>Destaque</label>
-                    <p><input type="radio" name="destaqueMota" value="sim"
-                            <?php if( $dados['motaDestaque'] == 'sim') echo " checked ";?>
-                        >&nbsp;Sim</p>
-                    <p><input type="radio" name="destaqueProduto" value="nao"
-                            <?php if( $dados['motaDestaque'] == 'nao') echo " checked ";?>
-                        >&nbsp;Não</p>
-                    <br>
-                    <input type="hidden" name="id" value="<?php echo $id?>">
-                    <button type="submit" class="btn btn-primary">Altera</button><br>
+
                 </form>
             </div>
 
-            <?php
-            Bottom();
-            ?>
+        </div>
         </div>
     </div>
 </div>

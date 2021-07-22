@@ -6,7 +6,22 @@ $result=mysqli_query($con,$sql);
 $dadosMota=mysqli_fetch_array($result);
 top();
 ?>
+<script>
+    function confirmaEliminaMotaChaves(id) {
+        $.ajax({
+            url:"AJAX/AJAXGetNameMotaChaves.php",
+            type:"post",
+            data:{
+                idMotas:id
+            },
+            success:function (result){
+                if(confirm('Confirma que deseja eliminar a Chave da mota: '+result+"?"))
+                    window.location="eliminaMotaChave.php?id=" + id;
+            }
+        })
+    }
 
+</script>
 
 <div class="container">
     <div class="services">
@@ -41,7 +56,7 @@ top();
                                     <td><?php echo $dados['chaveNome']?></td>
                                     <td><?php echo $dados['motaChaveValor']?></td>
 
-                                    <td><a class='btn btn-danger btn-xs' href="#" onclick="confirmaEliminaProdutoChave(<?php echo $dados['chaveId']?>,<?php echo $idMota?>);"><i class='fa fa-trash'></i>Eliminar</a></td>
+                                    <td><a class='btn btn-danger btn-xs' href="#" onclick="confirmaElimina(<?php echo $dados['chaveId']?>,<?php echo $idMota?>);"><i class='fa fa-trash'></i>Eliminar</a></td>
 
                                 </tr>
                                 <?php
